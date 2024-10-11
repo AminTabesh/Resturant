@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سامانه سفارش آنلاین - آشپزخونه</title>
+    <link rel="stylesheet" href="/public/styles/app.css">
+    <link rel="shortcut icon" href="/public/images/pngtree-chef-restaurant-logo-png-image_6136204.png" type="image/x-icon">
+</head>
+<body class="bg-gray-100 font-Dana">
+    <div class="w-full h-full bg-pattern bg-repeat z-0  bg-opacity-20">
+        
+        <nav id="navbar" class="bg-white shadow-regular w-full h-20 sticky top-0 flex justify-between px-5 items-center z-50">
+            <div class="flex  gap-7 h-full">
+                <img src="/public/images/pngtree-chef-restaurant-logo-png-image_6136204.png" alt="لوگوی رستوران" class="h-full mobile:hidden">
+                <ul class="flex gap-4 items-center justify-center font-medium">
+                    <li class="navbar-item mobile:text-base text-nowrap" id="navbar-home">خانه</li>
+        
+                    <li class="navbar-item mobile:text-base text-nowrap " id="navbar-order">سفارش آنلاین</li>
+                    
+                    <li class="navbar-item mobile:text-base text-nowrap" id="navbar-adress">نشانی</li>
+                </ul>
+                
+            </div>
+            <button id="login" class="btn text-nowrap mobile:transform mobile:scale-75">ورود / عضویت</button>
+        </nav>
+
+        <div id="slider" class="relative rounded-2xl h-[600px] w-11/12 mx-auto my-10 shadow-big overflow-hidden flex justify-center items-center mobile:h-[400px]">
+            <div id="overlay" class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
+
+            <h1 class="z-20 absolute text-white font-semibold text-5xl mb-52 mobile:text-3xl mobile:text-center mobile:w-11/12">به آشپزخونه خوش اومدی!</h1>
+
+            <button class="order-now z-20 absolute bg-red-500 font-medium border-solid border-2 border-red-500 h-12 px-4 py-1 rounded-2xl text-white transition-colors hover:bg-white hover:text-red-500 hover:border-white text-xl shadow-[0px_0px_15px_0px_rgba(239,68,68,1)]">آنلاین سفارش بده!</button>
+
+            <div class="status-holder flex absolute z-20 bottom-16 right-10 items-center gap-3 mobile:w-full mobile:justify-center mobile:right-0">
+                
+            
+            </div>
+
+            <img src="/public/images/image.jpg" alt="Slideshow" class="w-full h-full object-cover z-0 ">
+        </div>
+        
+        <div id="main" class="rounded-2xl w-11/12 mx-auto my-10  bg-white py-10 px-10 overflow-hidden">
+            <div id="menu-title" class="flex items-center h-20 gap-4 w-full justify-start mr-10 mobile:text-center mobile:mr-0 mobile:flex-col">
+                <img src="/public/images/Menu.png" alt="" class="h-1/2">
+                <p class=" relative text-3xl font-semibold after:content-[''] after:absolute after:h-1 after:right-0 after:left-0 after:bottom-0 after:bg-red-500 after:rounded-lg after:transform after:translate-y-2 mobile:text-lg">منوی رستوران</p>
+            </div>
+
+            <div id="menu-filters" class="flex gap-3 mr-10 mt-3 overflow-x-auto no-scrollbar relative mobile:mr-0 mobile:w-full mobile:mt-9">
+                <div class="cursor-pointer bg-gray-300 text-zinc-600 rounded-2xl py-1 px-4 transition-colors hover:bg-gray-400 flex items-center mobile:py-0 mobile:h-8 text-nowrap ">همه</div>
+                <div class="cursor-pointer bg-gray-300 text-zinc-600 rounded-2xl py-1 px-4 transition-colors hover:bg-gray-400 flex items-center mobile:py-0 mobile:h-8 text-nowrap ">برگر ها</div>
+                <div class="cursor-pointer bg-gray-300 text-zinc-600 rounded-2xl py-1 px-4 transition-colors hover:bg-gray-400 flex items-center mobile:py-0 mobile:h-8 text-nowrap ">پیتزا ها</div>
+                <div class="cursor-pointer bg-gray-300 text-zinc-600 rounded-2xl py-1 px-4 transition-colors hover:bg-gray-400 flex items-center mobile:py-0 mobile:h-8 text-nowrap ">هات داگ ها</div>
+            </div>
+
+            <div id="menu-items" class="py-12 px-0 flex flex-wrap gap-10 w-full mx-auto justify-center text-center">
+                
+            </div>
+
+            <div id="pagination-wrapper" class="flex flex-row-reverse gap-2 w-full justify-center items-center">
+                <div class="pagination-btn rounded-lg border-red-500 border bg-red-500 flex justify-center items-center w-8 h-8 text-white transition-colors cursor-pointer" >۱</div>
+                <div class="pagination-btn rounded-lg border-red-500 border flex justify-center items-center w-8 h-8 text-red-500 transition-colors hover:bg-red-500 hover:text-white cursor-pointer">۲</div>
+                <div class="pagination-btn rounded-lg border-red-500 border flex justify-center items-center w-8 h-8 text-red-500 transition-colors hover:bg-red-500 hover:text-white cursor-pointer">۳</div>
+                <div class="pagination-btn rounded-lg border-red-500 border flex justify-center items-center w-8 h-8 text-red-500 transition-colors hover:bg-red-500 hover:text-white cursor-pointer">۴</div>   
+            </div>
+
+            <div id="adress-section" class=" mt-10">
+                <div id="address-title" class="flex items-center h-20 gap-4 w-full justify-start mr-8 mobile:text-center mobile:mr-0 mobile:flex-col">
+                    <img src="/public/images/pin.png" alt="" class="h-2/3">
+                    <p class=" relative text-3xl font-semibold after:content-[''] after:absolute after:h-1 after:right-0 after:left-0 after:bottom-0 after:bg-red-500 after:rounded-lg after:transform after:translate-y-2 mobile:text-lg">نشانی مجموعه آشپزخونه</p>
+                </div>
+
+                <div id="adress-content" class="flex flex-row-reverse py-12 mx-auto w-11/12 gap-5 mobile:flex-col-reverse">
+                    <a href="https://nshn.ir/_bEc2t5FKFv0" class="w-full" target="_blank"><img src="/public/images/generated_image.png" alt="Map" class="rounded-2xl"></a>
+                    <div id="content-info" class="justify-self-start w-full font-medium flex flex-col justify-center items-center text-center">
+                        <p id="adress" class="text-xl mb-8 font-semibold">آدرس: فارس، فسا، شهرک پرواز، خیابان شهید شیرودی، کوچه 5</p>
+                        <p id="adress" class="text-l mb-8 text-red-500 font-semibold">(روی نقشه کلیک کن)</p>
+                        <p class="text-2xl font-semibold"><span class="text-red-500">071</span>53335357</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <footer class="bg-white w-full mt-24 flex justify-center py-5 px-10 mobile:flex-col">
+            <div id="contact" class="flex flex-col w-full items-center border-l border-dashed mobile:border-l-0 mobile:border-b">
+                <div id="contact-title" class="flex items-center h-20 gap-4 w-full justify-center">
+                    <img src="/public/images/red_landline_phone_flat_style_prev_ui.png" alt="" class="h-2/4 mobile:h-2/5">
+                    <p class=" relative text-xl font-semibold after:content-[''] after:absolute after:h-1 after:right-0 after:left-0 after:bottom-0 after:bg-red-500 after:rounded-lg after:transform after:translate-y-2 mr-[-10px] mobile:text-sm">ارتباط با ما</p>
+                </div>
+                <div class="form  flex flex-col w-2/3 h-full rounded-2xl py-10 px-5 gap-5 items-center">
+                    <input type="text" placeholder="نام شما" class=" rounded-md py-2 focus:outline-none px-2 w-full bg-gray-100 mobile:text-sm" id="ticket-sender" autocomplete="off">
+                    <textarea placeholder="متن پیغام" id="ticket-message" class=" rounded-md resize-none py-2 focus:outline-none px-2 w-full bg-gray-100 h-full mobile:text-sm"></textarea>
+                    <button class="mt-2 bg-red-500 text-white rounded-xl w-1/2 py-2 hover:bg-red-600 transition-colors mobile:scale-75" id="ticket-send-btn">ارسال</button>
+                </div>
+            </div>
+            <div id="hours" class="w-full flex flex-col items-center">
+                <div id="hours-title" class="flex items-center h-20 gap-4 w-full justify-center ">
+                    <img src="/public/images/clock.png" alt="" class="h-2/4 mobile:h-2/5">
+                    <p class=" relative text-xl font-semibold after:content-[''] after:absolute after:h-1 after:right-0 after:left-0 after:bottom-0 after:bg-red-500 after:rounded-lg after:transform after:translate-y-2 mr-[-10px] mobile:text-sm">ساعات کاری</p>
+                </div>
+                <table class="text-center w-11/12 my-8 mobile:text-xs mobile:my-2">
+                    <tr class="border-b border-dashed w-[100%]">
+                        <td class="w-1/2 py-4 border border-dashed ">شنبه</td>
+                        <td class="w-1/2 py-4 border border-dashed ">۷ تا ۱۲ بعد از ظهر</td>
+                    </tr>
+                    <tr class="border-b border-dashed w-[100%]">
+                        <td class="w-1/2 py-4 border border-dashed ">یکشنبه</td>
+                        <td class="w-1/2 py-4 border border-dashed ">۷ تا ۱۲ بعد از ظهر</td>
+                    </tr>
+                    <tr class="border-b border-dashed w-[100%]">
+                        <td class="w-1/2 py-4 border border-dashed ">دوشنبه</td>
+                        <td class="w-1/2 py-4 border border-dashed ">۷ تا ۱۲ بعد از ظهر</td>
+                    </tr>
+                    <tr class="border-b border-dashed w-[100%]">
+                        <td class="w-1/2 py-4 border border-dashed ">سه شنبه</td>
+                        <td class="w-1/2 py-4 border border-dashed ">۷ تا ۱۲ بعد از ظهر</td>
+                    </tr>
+                    <tr class="border-b border-dashed w-[100%]">
+                        <td class="w-1/2 py-4 border border-dashed ">چهارشنبه</td>
+                        <td class="w-1/2 py-4 border border-dashed ">۷ تا ۱۲ بعد از ظهر</td>
+                    </tr>
+                    <tr class="border-b border-dashed w-[100%]">
+                        <td class="w-1/2 py-4 border border-dashed ">پنجشنبه</td>
+                        <td class="w-1/2 py-4 border border-dashed ">۷ تا ۱۲ بعد از ظهر</td>
+                    </tr>
+                    <tr class="border-b border-dashed w-[100%]">
+                        <td class="w-1/2 py-4 border border-dashed ">جمعه</td>
+                        <td class="w-1/2 py-4 border border-dashed ">۷ تا ۱۲ بعد از ظهر</td>
+                    </tr>
+                </table>
+            </div>
+        </footer>
+
+        <script src="/public/js/app.js"></script>
+    </div>
+</body>
+</html>

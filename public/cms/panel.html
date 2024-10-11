@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/styles/app.css" />
+    <title>پنل مدیریت - آشپزخونه</title>
+    <link rel="shortcut icon" href="/public/images/user-gear.png" type="image/x-icon">
+  </head>
+  <body class="h-screen font-Dana relative overflow-hidden">
+    <div
+      class="body w-full h-full bg-gray-200 flex items-center justify-center filter"
+    >
+      <div
+        id="work-area"
+        class="w-11/12 h-5/6 bg-white rounded-2xl flex overflow-hidden"
+      >
+        <ul
+          class="bg-white w-3/12 h-full flex text-center flex-col justify-start font-semibold"
+        >
+          <li class="cms-menu-item bg-teal-500 text-white" id="general">عمومی</li>
+          <li class="cms-menu-item" id="menu-change">تغییر آیتم های منو</li>
+          <li class="cms-menu-item" id="messages">پیام های دریافتی</li>
+          <li class="cms-menu-item" id="compeleted-orders">سفارشات تکمیل شده</li>
+          <li class="cms-menu-item" id="users">کاربران</li>
+        </ul>
+        <div id="main-area" class="w-9/12 h-full p-10">
+
+          <div class="status-wrapper flex gap-5 items-center">
+            <label for="status">وضعیت رستوران:</label>
+            <select name="status" id="status-select" class="focus:outline-none border p-2 rounded-2xl">
+              <option value="open">در حال سفارش گیری</option>
+              <option value="closed">بسته</option>
+            </select>
+            <button id="status-btn" class="bg-teal-500 text-white py-2 px-4 rounded-2xl transition-colors hover:bg-teal-600">اعمال</button>
+          </div>
+          
+          <p class="text-4xl font-semibold text-center mt-5">سفارشات</p>
+          
+          <div class="orders  h-3/4 rounded-2xl overflow-y-auto mt-5 border">
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="add-modal w-[850px] h-[500px] bg-gray-100 absolute top-1/2 right-1/2 translate-x-1/2 translate-y-[-50%] rounded-2xl justify-center items-center flex-col gap-8  transition-all hidden opacity-0">
+        
+        <h3 class="font-semibold text-3xl">اضافه کردن آیتم</h3>
+
+        <input type="text" name="name" id="modal-name-input" placeholder="نام غذا" class="py-2 px-4 w-6/12 rounded-xl bg-gray-200 focus:outline-none">
+   
+        <input type="text" name="price" id="modal-price-input" placeholder="قیمت" class="py-2 px-4 w-6/12 rounded-xl bg-gray-200 focus:outline-none">
+
+        <input type="text" name="image" id="modal-image-input" placeholder="آدرس عکس" class="py-2 px-4 w-6/12 rounded-xl bg-gray-200 focus:outline-none">
+
+        <select name="class" id="modal-class-input" class="p-2 w-6/12 rounded-xl bg-gray-200 focus:outline-none" >
+            <option value="hot-dog">هات داگ</option>
+            <option value="pizza">پیتزا</option>
+            <option value="burger">برگر</option>
+            <option value="crispy">سوخاری</option>
+            <option value="steak">استیک</option>
+            <option value="fries">سیب زمینی</option>
+        </select>
+        <p class="modal-message text-red-500 text-lg font-medium hidden">لطفا ورودی ها را کنترل کنید.</p>
+        <div class="btns flex gap-10">
+            <button class="add-verify bg-teal-500 text-white py-2 px-4 rounded-2xl transition-colors hover:bg-teal-600">اضافه کن</button>
+            <button class="add-cancel bg-red-500 text-white py-2 px-4 rounded-2xl transition-colors hover:bg-red-600">لغو</button>
+        </div>
+    </div> 
+    <div class="remove-modal w-[850px] h-80 bg-gray-100 absolute top-1/2 right-1/2 translate-x-1/2 translate-y-[-50%] rounded-2xl justify-evenly items-center flex-col gap-8  transition-all hidden opacity-0">
+      <p class="remove-message text-2xl font-semibold">آیا از حذف آیتم [نام آیتم] اطمینان دارید؟</p>
+      <div class="btns flex gap-10">
+        <button class="remove-verify bg-teal-500 text-white py-2 px-4 rounded-2xl transition-colors hover:bg-teal-600">حذف کن</button>
+        <button class="remove-cancel bg-red-500 text-white py-2 px-4 rounded-2xl transition-colors hover:bg-red-600">لغو</button>
+    </div>
+    </div> 
+
+    <div class="edit-modal w-[850px] h-[500px] bg-gray-100 absolute top-1/2 right-1/2 translate-x-1/2 translate-y-[-50%] rounded-2xl justify-center items-center flex-col gap-8  transition-all hidden opacity-0">
+        
+      <h3 class="font-semibold text-3xl">تغییر آیتم</h3>
+      <input type="text" name="name" id="edit-modal-name-input" placeholder="نام غذا" class="py-2 px-4 w-6/12 rounded-xl bg-gray-200 focus:outline-none">
+ 
+      <input type="text" name="price" id="edit-modal-price-input" placeholder="قیمت" class="py-2 px-4 w-6/12 rounded-xl bg-gray-200 focus:outline-none">
+
+      <input type="text" name="image" id="edit-modal-image-input" placeholder="آدرس عکس" class="py-2 px-4 w-6/12 rounded-xl bg-gray-200 focus:outline-none">
+
+      <select name="class" id="edit-modal-class-input" class="p-2 w-6/12 rounded-xl bg-gray-200 focus:outline-none" >
+          <option value="hot-dog">هات داگ</option>
+          <option value="pizza">پیتزا</option>
+          <option value="burger">برگر</option>
+          <option value="crispy">سوخاری</option>
+          <option value="steak">استیک</option>
+          <option value="fries">سیب زمینی</option>
+      </select>
+      <p class="edit-modal-message text-red-500 text-lg font-medium hidden">لطفا ورودی ها را کنترل کنید.</p>
+      <div class="btns flex gap-10">
+          <button class="edit-verify bg-teal-500 text-white py-2 px-4 rounded-2xl transition-colors hover:bg-teal-600">تایید</button>
+          <button class="edit-cancel bg-red-500 text-white py-2 px-4 rounded-2xl transition-colors hover:bg-red-600">لغو</button>
+      </div>
+  </div>
+
+  <div class="full-modal w-[850px] h-[600px] absolute top-1/2 right-1/2 translate-x-1/2 translate-y-[-50%] rounded-2xl justify-evenly items-center flex-col gap-8  transition-all bg-gray-100 p-10 overflow-y-auto hidden opacity-0">
+    <p class="message-sender text-2xl font-semibold self-start"></p>
+    <p class="message-full max-h-96 overflow-y-auto"></p>
+    <div class="btns flex gap-5">
+      <button class="message-close bg-red-500 text-white py-2 px-4 rounded-2xl transition-colors hover:bg-red-600">بستن</button>
+  </div>
+  </div> 
+
+  <div class="full-order-modal w-[850px] absolute top-1/2 right-1/2 translate-x-1/2 translate-y-[-50%] rounded-2xl justify-evenly  flex-col gap-8  transition-all bg-gray-100 p-10 overflow-y-auto hidden opacity-0">
+    <p class="order-sender text-2xl font-semibold self-start text-center w-full"></p>
+    <p class="order-full max-h-96 overflow-y-auto text-right text-lg"></p>
+    <div class="btns flex gap-5">
+      <button class="full-order-close bg-red-500 text-white py-2 px-4 rounded-2xl transition-colors hover:bg-red-600">بستن</button>
+  </div>
+  </div> 
+
+    <script src="./panel.js"></script>
+  </body>
+</html>

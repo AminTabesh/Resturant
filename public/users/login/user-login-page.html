@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود - آشپزخونه</title>
+    <link rel="shortcut icon" href="/public/images/pngtree-chef-restaurant-logo-png-image_6136204.png" type="image/x-icon">
+    <link rel="stylesheet" href="/public/styles/app.css">
+</head>
+<body class="flex items-center justify-center bg-gray-100 bg-pattern h-screen font-Dana relative">
+    
+    <div class="form-container w-4/12 mobile:w-11/12 bg-white rounded-3xl shadow-2xl overflow-hidden p-10 ">
+        <form class="flex flex-col gap-10">
+            <h1 class="text-center font-semibold text-2xl">فرم ورود</h1>
+            <input type="text" placeholder="نام کاربری" class="username-input p-3 bg-gray-100 w-full rounded-lg focus:outline-none">
+            <input type="password" placeholder="رمز عبور" class="password-input p-3 bg-gray-100 w-full rounded-lg focus:outline-none">
+            <p class="text-gray-500">هنوز ثبت نام نکردی؟ <a href="/public/users/sign up/user-signup-page.html" class="text-red-500 transition-colors hover:text-red-600">اینجا کلیک کن</a></p>
+            <button class="login-btn py-2 px-4 bg-red-500 text-white rounded-xl transition-all hover:shadow-md hover:bg-red-600">ورود</button>
+        </form>
+    </div>
+
+    <div class="modal absolute top-5 right-5 bg-emerald-500 w-72 h-24 text-white rounded-2xl items-center justify-center p-5 cursor-pointer hidden overflow-hidden">
+        <p class="modal-message text-lg font-medium">با موفقیت وارد شدی!</p>
+        <div class=" modalBar w-full h-2 bg-white absolute bottom-0 animate-modal-bar left-0"></div>
+    </div>
+    <script src="./user-login-page.js" type="module"></script>
+</body>
+</html>
